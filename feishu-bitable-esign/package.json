@@ -1,0 +1,24 @@
+{
+  "name": "feishu-bitable-esign",
+  "version": "1.0.0",
+  "private": true,
+  "description": "飞书多维表格电子签名插件 - 完整的电子签名工作流系统",
+  "workspaces": [
+    "packages/widget",
+    "packages/server",
+    "packages/h5"
+  ],
+  "scripts": {
+    "dev:widget": "npm run dev --workspace=packages/widget",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "dev:h5": "npm run dev --workspace=packages/h5",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:widget\" \"npm run dev:h5\"",
+    "build:widget": "npm run build --workspace=packages/widget",
+    "build:h5": "npm run build --workspace=packages/h5",
+    "build:server": "npm run build --workspace=packages/server",
+    "build": "npm run build:server && npm run build:widget && npm run build:h5"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}
